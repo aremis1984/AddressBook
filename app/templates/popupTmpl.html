@@ -1,0 +1,38 @@
+<form>
+		<h3>Add/Edit a contact</h3>
+		<div class = "row">
+			<div class = "large-6 columns">
+				<label>First Name: 
+					<input type = "text" ng-model = "name" placeholder = "Contact name" name = "name" required />
+					<input type = "hidden" ng-model = "id" />
+				</label>
+			</div>
+			<div class = "large-6 columns">
+				<label>Last Name: 
+					<input type = "text" ng-model = "lastname" name = "lastname" placeholder = "Contact last name" required />
+				</label>
+			</div>			
+		</div>
+		
+		<div class = "row">
+			<div class = "large-6 columns">
+				<label>Email: 
+					<input type = "text" ng-model = "email" name = "email" placeholder = "Contact e-mail" required />
+				</label>
+			</div>
+			<div class = "large-6 columns">
+				<label>Country:
+					<!--<input type = "text" ng-model = "country" placeholder = "country" required />-->
+					<select ng-model="country" ng-options="x for x in countries" required>
+						<option value = "">-- Select Your country --</option>
+					</select>
+				</label>
+			</div>
+		</div>			
+		<div class = "row">
+			
+			<div class = "large-12 columns">	
+				<input type = "button" class = "button" value = "Save Data" ng-click = "addFormSubmit()" />
+			</div>
+		</div>			
+	</form>

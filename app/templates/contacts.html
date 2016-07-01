@@ -1,0 +1,33 @@
+<div class = "row container" ng-controller = "ContactsCtrl">	
+	<div id = "contactList" class = "large-10 columns">
+		<table>
+			<thead>
+				<tr>
+					<th width="15%">Name</th>
+					<th width="15%">Last Name</th>
+					<th width="25%">Email</th>
+					<th width="20%">Country</th>
+					<th width="35%">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat = "contact in contacts">
+					<td>{{contact.name}}</td>
+					<td>{{contact.lastname}}</td>
+					<td>{{contact.email}}</td>
+					<td>{{contact.country}}</td>
+					<td><a class = "button tiny" ng-click="showEditForm(contact)" >View/Edit</a>
+						<a class = "button tiny alert" ng-click="removeContact(contact)" >Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h4>Number of contacts ({{contacts.length}})</h4>
+	</div>
+	
+	<div class = "small-12 large-2 columns">
+		<input type = "button" class = "button large fixed" ng-click = "showAddForm()" ng-hide = "addFormShow" value = "New Contact" />
+
+	</div>
+	
+</div>
